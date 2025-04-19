@@ -11,7 +11,8 @@ public class CalculateVacationPay {
 
     @GetMapping("/Calculate")
 
-    public CalculateResult calculate(@RequestParam(value = "averageSalary", defaultValue = "null") String averageSalary, Integer vacationDay) {
+    public CalculateResult calculate(@RequestParam(value = "averageSalary", defaultValue = "null") String averageSalary,
+                                     @RequestParam(value = "vacationDay", defaultValue = "0") Integer vacationDay) {
 
         return new CalculateResult(String.format("%.2f", (Double.parseDouble(averageSalary) / averageMonthDAY) * vacationDay));
     }
