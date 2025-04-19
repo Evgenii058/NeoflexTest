@@ -40,7 +40,7 @@ public class CalculateVacationPayTests {
 
 		this.mockMvc.perform(get("/Calculate").param("averageSalary", "200").param("vacationDay", "2"))
 				.andDo(print()).andExpect(status().isOk())
-				.andExpect(jsonPath("$.content").value("13,65"));
+				.andExpect(jsonPath("$.salaryPay").value("13,65"));
 	}
 
 }
